@@ -1,9 +1,10 @@
+import Banner from "../Banner/Banner";
 
 
 const Home = () => {
     return (
-        <div>
-            <h1>This is my  home pages</h1>
+        <div className="max-w-[940px] mr-8">
+            <Banner></Banner>
         </div>
     );
 };

@@ -5,7 +5,7 @@ import Navber from "../Pages/Shared/Navber/Navber";
 
 const MainLayout = () => {
     return (
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[940px] ml-10">
             <Navber></Navber>
             <Outlet></Outlet>
             <Footer></Footer>

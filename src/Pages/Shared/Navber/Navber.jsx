@@ -1,18 +1,18 @@
 
 import { Link } from 'react-router-dom';
-import logo from '../../../assets/icons/logo.svg'
+import logo from '../../../assets/logo.svg'
 const Navber = () => {
 
     const NovLinks = <>
         <li><Link to={'/'}>Home</Link></li>
-        <li><Link>About</Link></li>
-        <li><Link>Services</Link></li>
-        <li><Link>Blog</Link></li>
-        <li><Link>Contact</Link></li>
+        <li><Link to={'/About'}>About</Link></li>
+        <li><Link to={'/Services'}>Services</Link></li>
+        <li><Link to={'/Blog'}>Blog</Link></li>
+        <li><Link to={'/Contact'}>Contact</Link></li> 
     </>
 
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-100 max-w-[940px] -ml-9 mb-6">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -22,7 +22,7 @@ const Navber = () => {
                         {NovLinks}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">{logo}</a> 
+                <Link className="btn normal-case btn-ghost text-xl"><img className='w-16 h-16' src={logo} alt="" /></Link> 
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -30,7 +30,7 @@ const Navber = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Button</a>
+                <button className="btn">APPOINTMENT</button>
             </div>
         </div>
     );
