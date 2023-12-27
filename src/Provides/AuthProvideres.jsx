@@ -1,5 +1,6 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import auth from "../fierbase/Fierbase.config";
+import { createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 
 export const AuthContext = createContext()
 
@@ -9,10 +10,28 @@ const AuthProvideres = ({children}) => {
 
 
 
+    const createUser = (email, password) =>{
+        setLoding(true)
+        return createUserWithEmailAndPassword(auth, email, password)
+    }
+
+
+
+    useEffect(()=>{
+           const unsubcribe = onAuthStateChanged(auth, currenUser =>{
+                setUser(currenUser)
+                console.log('current user', currenUser)
+                setLoding(false)
+            });
+            return () =>{
+                return unsubcribe
+            }
+    },[])
 
     const authInfo = {
         user,
-        loding
+        loding, 
+        createUser
     }
     return (
         <AuthContext.Provider value={authInfo}>
