@@ -4,17 +4,27 @@ import logo from '../../assets/images/login/login.svg'
 import { BsFacebook } from "react-icons/bs";
 import { FaLinkedinIn } from "react-icons/fa6";
 import { IoLogoGoogle } from "react-icons/io5";
+import { useContext } from 'react';
+import { AuthContext } from '../../Provides/AuthProvideres';
 
 
 
 const Login = () => {
+    const {signIn}  = useContext(AuthContext)
 
     const handlerLoginSubmit = e => {
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
+     
+        signIn(email, password)
+        .then(result =>{
+            console.log(result.user)
+        })
+        .catch(error =>{
+            console.error(error)
+        })
     }
 
 
