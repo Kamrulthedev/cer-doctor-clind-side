@@ -27,6 +27,7 @@ const Services = () => {
                         Serviced?.map(Service => <ServiceCard key={Service._id} Service={Service}></ServiceCard>)
                     }
                 </div>
+                <button className="mt-4 btn btn-outline btn-secondar">More Services</button>
             </div>
         </div>
     );
