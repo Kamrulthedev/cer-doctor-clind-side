@@ -7,7 +7,6 @@ import { RiLogoutCircleRLine } from "react-icons/ri";
 
 const Navber = () => {
     const { user, logOut } = useContext(AuthContext)
-
     const handlerLogout = () => {
         logOut()
             .then()

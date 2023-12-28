@@ -4,8 +4,8 @@ import { FaLocationDot } from "react-icons/fa6";
 
 const Loacation = () => {
     return (
-        <div className="h-60 mb-4 bg-slate-950">
-            <div className="flex justify-center items-center gap-16 text-white">
+        <div className="lg:h-60 p-4 lg:p-0 mb-4 bg-slate-950">
+            <div className="lg:flex justify-center items-center gap-16 text-white">
                <div className="mt-24 flex items-center gap-2">
                 <FaBusinessTime className="text-3xl text-red-600"></FaBusinessTime>
                 <div>

@@ -1,4 +1,5 @@
 import { FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const ServiceCard = ({ Service }) => {
     console.log(Service)
@@ -15,13 +16,13 @@ const ServiceCard = ({ Service }) => {
 
                     <div className="flex justify-between">
                         <p className="text-orange-500 -ml-12 font-bold">Price:$ {price}</p>
-                        <button className="btn btn-ghost text-red-500">
+                       <Link to={`/Checkout/${_id}`}> <button className="btn btn-ghost text-red-500">
                         <FaArrowRight></FaArrowRight>
-                    </button>
+                    </button></Link>
                 </div>
             </div>
         </div>
-        </div >
+        </div>
     );
 };
 
