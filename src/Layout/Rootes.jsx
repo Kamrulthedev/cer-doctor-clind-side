@@ -3,12 +3,16 @@ import MainLayout from "./MainLayout";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login";
 import SignUp from "../SignUp/SignUp";
+import ErrorPages from "../ErrorPage/ErrorPages";
+import About from "../Pages/About/About";
+
 
 
 const Routers = createBrowserRouter([
     {
       path: "/",
       element:<MainLayout></MainLayout>,
+      errorElement: <ErrorPages></ErrorPages>,
       children:[
         {
             path:'/',
@@ -21,6 +25,10 @@ const Routers = createBrowserRouter([
         {
           path:'/SignUp',
           element:<SignUp></SignUp>
+        },
+        {
+          path:'/About',
+          element:<About></About>
         }
       ]
     },
