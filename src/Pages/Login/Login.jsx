@@ -1,5 +1,5 @@
 
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import logo from '../../assets/images/login/login.svg'
 import { BsFacebook } from "react-icons/bs";
 import { FaLinkedinIn } from "react-icons/fa6";
@@ -11,6 +11,8 @@ import { AuthContext } from '../../Provides/AuthProvideres';
 
 const Login = () => {
     const {signIn}  = useContext(AuthContext)
+    const location = useLocation()
+
 
     const handlerLoginSubmit = e => {
         e.preventDefault();
@@ -21,6 +23,7 @@ const Login = () => {
         signIn(email, password)
         .then(result =>{
             console.log(result.user)
+          
         })
         .catch(error =>{
             console.error(error)

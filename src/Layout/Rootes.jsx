@@ -6,6 +6,7 @@ import SignUp from "../SignUp/SignUp";
 import ErrorPages from "../ErrorPage/ErrorPages";
 import About from "../Pages/About/About";
 import Checkout from "../Pages/Checkout/Checkout";
+import ProveateRout from "../ProveateRout/ProveateRout";
 
 
 
@@ -33,7 +34,7 @@ const Routers = createBrowserRouter([
         },
         {
           path:'/Checkout/:id',
-          element:<Checkout></Checkout>,
+          element:<ProveateRout><Checkout></Checkout></ProveateRout>,
           loader: ({params})=> fetch (`services.json/${params.id}`)
         }
       ]
