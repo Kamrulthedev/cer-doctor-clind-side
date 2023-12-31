@@ -1,5 +1,5 @@
 
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../assets/images/login/login.svg'
 import { BsFacebook } from "react-icons/bs";
 import { FaLinkedinIn } from "react-icons/fa6";
@@ -11,7 +11,10 @@ import { AuthContext } from '../../Provides/AuthProvideres';
 
 const Login = () => {
     const {signIn}  = useContext(AuthContext)
+    const navigate = useNavigate()
     const location = useLocation()
+
+    console.log(location)
 
 
     const handlerLoginSubmit = e => {
@@ -23,7 +26,12 @@ const Login = () => {
         signIn(email, password)
         .then(result =>{
             console.log(result.user)
-          
+            //  navigate(location?.state ? location?.state : '/')
+        //   get acrsse token
+        
+        
+
+
         })
         .catch(error =>{
             console.error(error)
